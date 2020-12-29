@@ -1,7 +1,7 @@
 const io = require('socket.io')(3001);
 
-let id = 1;
-let messages = [{ id: 1, name: 'Host', message: 'Hi from Server' }];
+const users = {};
+const messages = [];
 
 io.on('connection', (socket) => {
   socket.emit('chat-message', messages);
