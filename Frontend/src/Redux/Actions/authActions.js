@@ -1,4 +1,9 @@
-import { ADD_NAME, ADD_MESSAGE, MANAGE_MESSAGE } from '../ReduxConstants';
+import {
+  ADD_NAME,
+  ADD_MESSAGE,
+  MANAGE_MESSAGE,
+  START_CHAT,
+} from '../ReduxConstants';
 
 export const addName = (value) => {
   return {
@@ -18,5 +23,13 @@ export const manageMessage = (value) => {
   return {
     type: MANAGE_MESSAGE,
     value,
+  };
+};
+
+export const startChat = (name) => {
+  localStorage.setItem('name', name);
+  return {
+    type: START_CHAT,
+    value: name,
   };
 };

@@ -13,6 +13,7 @@ class Chat extends React.Component {
   }
   sendMessage = () => {
     socket.emit('send-message', {
+      id: socket.id,
       name: this.props.name,
       message: this.props.message,
     });
